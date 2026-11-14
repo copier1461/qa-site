@@ -1,1 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A short description of your website.">
+  <title>Your Site Name</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <a class="site-name" href="/" aria-label="Your Site Name — home">
+      Your Site Name
+    </a>
+
+    <nav aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="intro" aria-labelledby="intro-title">
+      <h1 id="intro-title">A clear headline about your site</h1>
+      <p>A short introduction that tells visitors what they’ll find here.</p>
+      <a class="button" href="#about">Learn more</a>
+    </section>
+
+    <section id="about" class="content-section" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <p>Add your content here. Use headings in order, and write link text that
+        makes sense on its own.</p>
+    </section>
+
+    <section id="contact" class="content-section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p><a href="mailto:hello@example.com">Email me</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year">2026</span> Your Site Name</p>
+  </footer>
+</body>
+</html>
 
