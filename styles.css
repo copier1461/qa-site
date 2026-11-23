@@ -1,1 +1,40 @@
 
+
+
+
+
+/* FOR MENU JS */
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 40rem) {
+  html.js-enabled .nav-toggle {
+    display: inline-block;
+  }
+
+  html.js-enabled .site-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+
+  html.js-enabled .site-header nav {
+    grid-column: 1 / -1;
+  }
+
+  html.js-enabled .site-header nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  html.js-enabled .site-header nav[data-closed="true"] {
+    display: none;
+  }
+
+  html.js-enabled .nav-toggle:focus-visible {
+    outline: 3px solid #b54708;
+    outline-offset: 3px;
+  }
+}
+
+
