@@ -15,39 +15,107 @@
 <!-- HEADER -->
   <header class="site-header">
     <a class="site-name" href="/" aria-label="Your Site Name — home">
-      Your Site Name
+      Site Name
     </a>
 <!-- NAVIGATION -->
-    <nav aria-label="Main navigation">
+    <!-- BUTTON -->
+    <button
+    class="nav-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="main-menu"
+  >
+    <span class="menu-label">Menu</span>
+  </button>
+    
+    <nav id="main-menu" aria-label="Main navigation">
+      <!-- LOGO PLACE HOLDER -->
+      <a class="logo" href="" aria-label="SQA English home">Distinctiva</a>
+      <!-- NAV LIST -->
       <ul class="nav-list">
+        <li><a class="nav-cta" href="#get-started">Get Started</a></li>
+        <li><a href="#list">Email List</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
-
+<!-- MAIN -->
   <main id="main">
-    <section class="intro" aria-labelledby="intro-title">
-      <h1 id="intro-title">A clear headline about your site</h1>
-      <p>A short introduction that tells visitors what they’ll find here.</p>
-      <a class="button" href="#about">Learn more</a>
+<!-- SECTION 1:  -->
+    <section id="" class="content-section" aria-labelledby="section1">
+      <h1 id="section1">Heading 1</h1>
+      <p>Text</p>
     </section>
-
-    <section id="about" class="content-section" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
-      <p>Add your content here. Use headings in order, and write link text that
-        makes sense on its own.</p>
+<!-- SECTION 2:  -->
+    <section id="" class="content-section" aria-labelledby="section2">
+      <h2 id="section2">Heading 2</h2>
+      <p>Text</p>
     </section>
-
-    <section id="contact" class="content-section" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <p><a href="mailto:hello@example.com">Email me</a></p>
+<!-- SECTION 3:  -->
+    <section id="" class="content-section" aria-labelledby="section3">
+      <h2 id="section3">Heading 2</h2>
+      <p>Text</p>
     </section>
+<!-- SECTION 4:  -->
+    <section id="" class="content-section" aria-labelledby="section4">
+      <h2 id="section4">Heading 2</h1>
+      <p>Text</p>
+    </section>
+<!-- SECTION 5:  -->
+    <section id="" class="content-section" aria-labelledby="section5">
+      <h2 id="section5">Heading 2</h2>
+      <p>Text</p>
+    </section>
+<!-- SECTION 6:  -->
+    <section id="" class="content-section" aria-labelledby="section6">
+      <h2 id="section6">Heading 2</h2>
+      <p>Text</p>
+    </section>
+<!-- SECTION 7:  -->
+    <section id="" class="content-section" aria-labelledby="section7">
+      <h2 id="section7">Heading 2</h2>
+      <p>Text</p>
+    </section> 
   </main>
-
+<!-- footer -->
   <footer class="site-footer">
     <p>&copy; <span id="year">2026</span> Your Site Name</p>
   </footer>
+
+
+<!-- FOR MENU JS -->
+  <script>
+  document.documentElement.classList.add("js-enabled");
+
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.querySelector("#main-menu");
+
+  function setMenuOpen(isOpen) {
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    toggle.querySelector(".menu-label").textContent =
+      isOpen ? "Close menu" : "Menu";
+    menu.dataset.closed = String(!isOpen);
+  }
+
+  setMenuOpen(false);
+
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    setMenuOpen(!isOpen);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.key === "Escape" &&
+      toggle.getAttribute("aria-expanded") === "true"
+    ) {
+      setMenuOpen(false);
+      toggle.focus();
+    }
+  });
+</script>
+
 </body>
 </html>
 
